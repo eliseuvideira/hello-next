@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 const PostLink = (props) => (
   <li>
-    <Link href={`/post?title=${props.title}`}>
-      <a>{props.title}</a>
+    <Link href="/p/[id]" as={`/p/${props.id}`}>
+      <a>{props.id}</a>
     </Link>
   </li>
 );
 
 PostLink.propTypes = {
-  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default function Index() {
@@ -20,9 +20,9 @@ export default function Index() {
     <Layout>
       <h1>Hello Next.js</h1>
       <ul>
-        <PostLink title="Hello Next.js" />
-        <PostLink title="Learn Next.js is awesome" />
-        <PostLink title="Deploy apps with Zeit" />
+        <PostLink id="hello-nextjs" />
+        <PostLink id="learn-nextjs" />
+        <PostLink id="deploy-nextjs" />
       </ul>
     </Layout>
   );
